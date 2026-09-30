@@ -1,0 +1,1476 @@
+{
+  "schema_version": 1,
+  "description": "Single source of truth: upstream IDs ↔ canonical key ↔ zh-CN display name ↔ local asset file.",
+  "heroes": {
+    "reaper": {
+      "name_zh": "死神",
+      "role": "damage",
+      "ids": [
+        "207165582859042818"
+      ],
+      "file": "heroes/reaper.png",
+      "aliases": [
+        "Reaper",
+        "reaper",
+        "死神"
+      ],
+      "source_url": ""
+    },
+    "tracer": {
+      "name_zh": "猎空",
+      "role": "damage",
+      "ids": [
+        "207165582859042819"
+      ],
+      "file": "heroes/tracer.png",
+      "aliases": [
+        "Tracer",
+        "tracer",
+        "猎空"
+      ],
+      "source_url": ""
+    },
+    "mercy": {
+      "name_zh": "天使",
+      "role": "support",
+      "ids": [
+        "207165582859042820"
+      ],
+      "file": "heroes/mercy.png",
+      "aliases": [
+        "Mercy",
+        "mercy",
+        "天使"
+      ],
+      "source_url": ""
+    },
+    "hanzo": {
+      "name_zh": "半藏",
+      "role": "damage",
+      "ids": [
+        "207165582859042821"
+      ],
+      "file": "heroes/hanzo.png",
+      "aliases": [
+        "Hanzo",
+        "hanzo",
+        "半藏"
+      ],
+      "source_url": ""
+    },
+    "torbjorn": {
+      "name_zh": "托比昂",
+      "role": "damage",
+      "ids": [
+        "207165582859042822"
+      ],
+      "file": "heroes/torbjorn.png",
+      "aliases": [
+        "Torbjörn",
+        "torbjorn",
+        "torbjörn",
+        "托比昂"
+      ],
+      "source_url": ""
+    },
+    "reinhardt": {
+      "name_zh": "莱因哈特",
+      "role": "tank",
+      "ids": [
+        "207165582859042823"
+      ],
+      "file": "heroes/reinhardt.png",
+      "aliases": [
+        "Reinhardt",
+        "reinhardt",
+        "莱因哈特"
+      ],
+      "source_url": ""
+    },
+    "pharah": {
+      "name_zh": "法老之鹰",
+      "role": "damage",
+      "ids": [
+        "207165582859042824"
+      ],
+      "file": "heroes/pharah.png",
+      "aliases": [
+        "Pharah",
+        "pharah",
+        "法老之鹰"
+      ],
+      "source_url": ""
+    },
+    "winston": {
+      "name_zh": "温斯顿",
+      "role": "tank",
+      "ids": [
+        "207165582859042825"
+      ],
+      "file": "heroes/winston.png",
+      "aliases": [
+        "Winston",
+        "winston",
+        "温斯顿"
+      ],
+      "source_url": ""
+    },
+    "widowmaker": {
+      "name_zh": "黑百合",
+      "role": "damage",
+      "ids": [
+        "207165582859042826"
+      ],
+      "file": "heroes/widowmaker.png",
+      "aliases": [
+        "Widowmaker",
+        "widowmaker",
+        "黑百合"
+      ],
+      "source_url": ""
+    },
+    "bastion": {
+      "name_zh": "堡垒",
+      "role": "damage",
+      "ids": [
+        "207165582859042837"
+      ],
+      "file": "heroes/bastion.png",
+      "aliases": [
+        "Bastion",
+        "bastion",
+        "堡垒"
+      ],
+      "source_url": ""
+    },
+    "symmetra": {
+      "name_zh": "秩序之光",
+      "role": "damage",
+      "ids": [
+        "207165582859042838"
+      ],
+      "file": "heroes/symmetra.png",
+      "aliases": [
+        "Symmetra",
+        "symmetra",
+        "秩序之光"
+      ],
+      "source_url": ""
+    },
+    "zenyatta": {
+      "name_zh": "禅雅塔",
+      "role": "support",
+      "ids": [
+        "207165582859042848"
+      ],
+      "file": "heroes/zenyatta.png",
+      "aliases": [
+        "Zenyatta",
+        "zenyatta",
+        "禅雅塔"
+      ],
+      "source_url": ""
+    },
+    "genji": {
+      "name_zh": "源氏",
+      "role": "damage",
+      "ids": [
+        "207165582859042857"
+      ],
+      "file": "heroes/genji.png",
+      "aliases": [
+        "Genji",
+        "genji",
+        "源氏"
+      ],
+      "source_url": ""
+    },
+    "roadhog": {
+      "name_zh": "路霸",
+      "role": "tank",
+      "ids": [
+        "207165582859042880"
+      ],
+      "file": "heroes/roadhog.png",
+      "aliases": [
+        "Roadhog",
+        "roadhog",
+        "路霸"
+      ],
+      "source_url": ""
+    },
+    "cassidy": {
+      "name_zh": "卡西迪",
+      "role": "damage",
+      "ids": [
+        "207165582859042882"
+      ],
+      "file": "heroes/cassidy.png",
+      "aliases": [
+        "Cassidy",
+        "cassidy",
+        "卡西迪"
+      ],
+      "source_url": ""
+    },
+    "junkrat": {
+      "name_zh": "狂鼠",
+      "role": "damage",
+      "ids": [
+        "207165582859042917"
+      ],
+      "file": "heroes/junkrat.png",
+      "aliases": [
+        "Junkrat",
+        "junkrat",
+        "狂鼠"
+      ],
+      "source_url": ""
+    },
+    "zarya": {
+      "name_zh": "查莉娅",
+      "role": "tank",
+      "ids": [
+        "207165582859042920"
+      ],
+      "file": "heroes/zarya.png",
+      "aliases": [
+        "Zarya",
+        "zarya",
+        "查莉娅"
+      ],
+      "source_url": ""
+    },
+    "soldier-76": {
+      "name_zh": "士兵：76",
+      "role": "damage",
+      "ids": [
+        "207165582859042926"
+      ],
+      "file": "heroes/soldier-76.png",
+      "aliases": [
+        "Soldier: 76",
+        "soldier 76",
+        "soldier-76",
+        "soldier76",
+        "soldier: 76",
+        "士兵：76"
+      ],
+      "source_url": ""
+    },
+    "lucio": {
+      "name_zh": "卢西奥",
+      "role": "support",
+      "ids": [
+        "207165582859042937"
+      ],
+      "file": "heroes/lucio.png",
+      "aliases": [
+        "Lúcio",
+        "lucio",
+        "lúcio",
+        "卢西奥"
+      ],
+      "source_url": ""
+    },
+    "dva": {
+      "name_zh": "D.Va",
+      "role": "tank",
+      "ids": [
+        "207165582859042938"
+      ],
+      "file": "heroes/dva.png",
+      "aliases": [
+        "D.Va",
+        "d va",
+        "d.va",
+        "dva"
+      ],
+      "source_url": ""
+    },
+    "mei": {
+      "name_zh": "美",
+      "role": "damage",
+      "ids": [
+        "207165582859043037"
+      ],
+      "file": "heroes/mei.png",
+      "aliases": [
+        "Mei",
+        "mei",
+        "美"
+      ],
+      "source_url": ""
+    },
+    "sombra": {
+      "name_zh": "黑影",
+      "role": "damage",
+      "ids": [
+        "207165582859043118"
+      ],
+      "file": "heroes/sombra.png",
+      "aliases": [
+        "Sombra",
+        "sombra",
+        "黑影"
+      ],
+      "source_url": ""
+    },
+    "doomfist": {
+      "name_zh": "末日铁拳",
+      "role": "tank",
+      "ids": [
+        "207165582859043119"
+      ],
+      "file": "heroes/doomfist.png",
+      "aliases": [
+        "Doomfist",
+        "doomfist",
+        "末日铁拳"
+      ],
+      "source_url": ""
+    },
+    "ana": {
+      "name_zh": "安娜",
+      "role": "support",
+      "ids": [
+        "207165582859043131"
+      ],
+      "file": "heroes/ana.png",
+      "aliases": [
+        "Ana",
+        "ana",
+        "安娜"
+      ],
+      "source_url": ""
+    },
+    "orisa": {
+      "name_zh": "奥丽莎",
+      "role": "tank",
+      "ids": [
+        "207165582859043134"
+      ],
+      "file": "heroes/orisa.png",
+      "aliases": [
+        "Orisa",
+        "orisa",
+        "奥丽莎"
+      ],
+      "source_url": ""
+    },
+    "brigitte": {
+      "name_zh": "布丽吉塔",
+      "role": "support",
+      "ids": [
+        "207165582859043221"
+      ],
+      "file": "heroes/brigitte.png",
+      "aliases": [
+        "Brigitte",
+        "brigitte",
+        "布丽吉塔"
+      ],
+      "source_url": ""
+    },
+    "moira": {
+      "name_zh": "莫伊拉",
+      "role": "support",
+      "ids": [
+        "207165582859043234"
+      ],
+      "file": "heroes/moira.png",
+      "aliases": [
+        "Moira",
+        "moira",
+        "莫伊拉"
+      ],
+      "source_url": ""
+    },
+    "wrecking-ball": {
+      "name_zh": "破坏球",
+      "role": "tank",
+      "ids": [
+        "207165582859043274"
+      ],
+      "file": "heroes/wrecking-ball.png",
+      "aliases": [
+        "Wrecking Ball",
+        "hammond",
+        "wrecking ball",
+        "wrecking-ball",
+        "wreckingball",
+        "破坏球"
+      ],
+      "source_url": ""
+    },
+    "sojourn": {
+      "name_zh": "索杰恩",
+      "role": "damage",
+      "ids": [
+        "207165582859043308"
+      ],
+      "file": "heroes/sojourn.png",
+      "aliases": [
+        "Sojourn",
+        "sojourn",
+        "索杰恩"
+      ],
+      "source_url": ""
+    },
+    "ashe": {
+      "name_zh": "艾什",
+      "role": "damage",
+      "ids": [
+        "207165582859043328"
+      ],
+      "file": "heroes/ashe.png",
+      "aliases": [
+        "Ashe",
+        "ashe",
+        "艾什"
+      ],
+      "source_url": ""
+    },
+    "echo": {
+      "name_zh": "回声",
+      "role": "damage",
+      "ids": [
+        "207165582859043334"
+      ],
+      "file": "heroes/echo.png",
+      "aliases": [
+        "Echo",
+        "echo",
+        "回声"
+      ],
+      "source_url": ""
+    },
+    "baptiste": {
+      "name_zh": "巴蒂斯特",
+      "role": "support",
+      "ids": [
+        "207165582859043361"
+      ],
+      "file": "heroes/baptiste.png",
+      "aliases": [
+        "Baptiste",
+        "baptiste",
+        "巴蒂斯特"
+      ],
+      "source_url": ""
+    },
+    "kiriko": {
+      "name_zh": "雾子",
+      "role": "support",
+      "ids": [
+        "207165582859043377"
+      ],
+      "file": "heroes/kiriko.png",
+      "aliases": [
+        "Kiriko",
+        "kiriko",
+        "雾子"
+      ],
+      "source_url": ""
+    },
+    "junker-queen": {
+      "name_zh": "渣客女王",
+      "role": "tank",
+      "ids": [
+        "207165582859043382"
+      ],
+      "file": "heroes/junker-queen.png",
+      "aliases": [
+        "Junker Queen",
+        "junker queen",
+        "junker-queen",
+        "junkerqueen",
+        "渣客女王"
+      ],
+      "source_url": ""
+    },
+    "sigma": {
+      "name_zh": "西格玛",
+      "role": "tank",
+      "ids": [
+        "207165582859043387"
+      ],
+      "file": "heroes/sigma.png",
+      "aliases": [
+        "Sigma",
+        "sigma",
+        "西格玛"
+      ],
+      "source_url": ""
+    },
+    "ramattra": {
+      "name_zh": "拉玛刹",
+      "role": "tank",
+      "ids": [
+        "207165582859043469"
+      ],
+      "file": "heroes/ramattra.png",
+      "aliases": [
+        "Ramattra",
+        "ramattra",
+        "拉玛刹"
+      ],
+      "source_url": ""
+    },
+    "lifeweaver": {
+      "name_zh": "生命之梭",
+      "role": "support",
+      "ids": [
+        "207165582859043473"
+      ],
+      "file": "heroes/lifeweaver.png",
+      "aliases": [
+        "Lifeweaver",
+        "lifeweaver",
+        "生命之梭"
+      ],
+      "source_url": ""
+    },
+    "mauga": {
+      "name_zh": "毛加",
+      "role": "tank",
+      "ids": [
+        "207165582859043594"
+      ],
+      "file": "heroes/mauga.png",
+      "aliases": [
+        "Mauga",
+        "mauga",
+        "毛加"
+      ],
+      "source_url": ""
+    },
+    "illari": {
+      "name_zh": "伊拉锐",
+      "role": "support",
+      "ids": [
+        "207165582859043612"
+      ],
+      "file": "heroes/illari.png",
+      "aliases": [
+        "Illari",
+        "illari",
+        "伊拉锐"
+      ],
+      "source_url": ""
+    },
+    "freja": {
+      "name_zh": "弗蕾娅",
+      "role": "damage",
+      "ids": [
+        "207165582859043626"
+      ],
+      "file": "heroes/freja.png",
+      "aliases": [
+        "Freja",
+        "freja",
+        "弗蕾娅"
+      ],
+      "source_url": ""
+    },
+    "venture": {
+      "name_zh": "探奇",
+      "role": "damage",
+      "ids": [
+        "207165582859043627"
+      ],
+      "file": "heroes/venture.png",
+      "aliases": [
+        "Venture",
+        "venture",
+        "探奇"
+      ],
+      "source_url": ""
+    },
+    "hazard": {
+      "name_zh": "骇灾",
+      "role": "tank",
+      "ids": [
+        "207165582859043682"
+      ],
+      "file": "heroes/hazard.png",
+      "aliases": [
+        "Hazard",
+        "hazard",
+        "骇灾"
+      ],
+      "source_url": ""
+    },
+    "juno": {
+      "name_zh": "朱诺",
+      "role": "support",
+      "ids": [
+        "207165582859043685"
+      ],
+      "file": "heroes/juno.png",
+      "aliases": [
+        "Juno",
+        "juno",
+        "朱诺"
+      ],
+      "source_url": ""
+    },
+    "wuyang": {
+      "name_zh": "无漾",
+      "role": "support",
+      "ids": [
+        "207165582859043779"
+      ],
+      "file": "heroes/wuyang.png",
+      "aliases": [
+        "Wuyang",
+        "wuyang",
+        "无漾"
+      ],
+      "source_url": ""
+    },
+    "vendetta": {
+      "name_zh": "斩仇",
+      "role": "damage",
+      "ids": [
+        "207165582859043954"
+      ],
+      "file": "heroes/vendetta.png",
+      "aliases": [
+        "Vendetta",
+        "vendetta",
+        "斩仇"
+      ],
+      "source_url": ""
+    },
+    "domina": {
+      "name_zh": "金驭",
+      "role": "tank",
+      "ids": [
+        "207165582859044036"
+      ],
+      "file": "heroes/domina.png",
+      "aliases": [
+        "Domina",
+        "domina",
+        "金驭"
+      ],
+      "source_url": ""
+    },
+    "sierra": {
+      "name_zh": "西拉",
+      "role": "damage",
+      "ids": [
+        "207165582859044050"
+      ],
+      "file": "heroes/sierra.png",
+      "aliases": [
+        "Sierra",
+        "sierra",
+        "西拉"
+      ],
+      "source_url": ""
+    },
+    "emre": {
+      "name_zh": "埃姆雷",
+      "role": "damage",
+      "ids": [
+        "207165582859044056"
+      ],
+      "file": "heroes/emre.png",
+      "aliases": [
+        "Emre",
+        "emre",
+        "埃姆雷"
+      ],
+      "source_url": ""
+    },
+    "anran": {
+      "name_zh": "安燃",
+      "role": "damage",
+      "ids": [
+        "207165582859044061"
+      ],
+      "file": "heroes/anran.png",
+      "aliases": [
+        "Anran",
+        "anran",
+        "安燃"
+      ],
+      "source_url": ""
+    },
+    "mizuki": {
+      "name_zh": "瑞稀",
+      "role": "support",
+      "ids": [
+        "207165582859044067"
+      ],
+      "file": "heroes/mizuki.png",
+      "aliases": [
+        "Mizuki",
+        "mizuki",
+        "瑞稀"
+      ],
+      "source_url": ""
+    },
+    "jetpack-cat": {
+      "name_zh": "飞天猫",
+      "role": "support",
+      "ids": [
+        "207165582859044118"
+      ],
+      "file": "heroes/jetpack-cat.png",
+      "aliases": [
+        "Jetpack Cat",
+        "jetpack cat",
+        "jetpack-cat",
+        "jetpackcat",
+        "飞天猫"
+      ],
+      "source_url": ""
+    },
+    "shion": {
+      "name_zh": "死怨",
+      "role": "damage",
+      "ids": [
+        "207165582859044140"
+      ],
+      "file": "heroes/shion.png",
+      "aliases": [
+        "Shion",
+        "shion",
+        "死怨"
+      ],
+      "source_url": ""
+    },
+    "dmon": {
+      "name_zh": "D.Mon",
+      "role": "tank",
+      "ids": [
+        "207165582859044162"
+      ],
+      "file": "heroes/dmon.png",
+      "aliases": [
+        "D.Mon",
+        "d.mon",
+        "dmon"
+      ],
+      "source_url": ""
+    }
+  },
+  "maps": {
+    "anubis": {
+      "name_zh": "阿努比斯神殿",
+      "mode": "assault",
+      "mode_zh": "攻防作战",
+      "ids": [
+        "576460752303423579"
+      ],
+      "file": "maps/anubis.jpg",
+      "aliases": [
+        "Temple of Anubis",
+        "anubis",
+        "temple of anubis",
+        "阿努比斯神殿"
+      ],
+      "source_url": ""
+    },
+    "kings-row": {
+      "name_zh": "国王大道",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303423700",
+        "576460752303425201",
+        "576460752303427608"
+      ],
+      "file": "maps/kings-row.jpg",
+      "aliases": [
+        "King’s Row",
+        "kings row",
+        "kings-row",
+        "king’s row",
+        "国王大道"
+      ],
+      "source_url": ""
+    },
+    "hanamura": {
+      "name_zh": "花村",
+      "mode": "assault",
+      "mode_zh": "攻防作战",
+      "ids": [
+        "576460752303423845"
+      ],
+      "file": "maps/hanamura.jpg",
+      "aliases": [
+        "Hanamura",
+        "hanamura",
+        "花村"
+      ],
+      "source_url": ""
+    },
+    "watchpoint-gibraltar": {
+      "name_zh": "监测站：直布罗陀",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303423876",
+        "576460752303428110"
+      ],
+      "file": "maps/watchpoint-gibraltar.jpg",
+      "aliases": [
+        "Watchpoint: Gibraltar",
+        "watchpoint gibraltar",
+        "watchpoint-gibraltar",
+        "watchpoint: gibraltar",
+        "监测站：直布罗陀"
+      ],
+      "source_url": ""
+    },
+    "numbani": {
+      "name_zh": "努巴尼",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303423956"
+      ],
+      "file": "maps/numbani.jpg",
+      "aliases": [
+        "Numbani",
+        "numbani",
+        "努巴尼"
+      ],
+      "source_url": ""
+    },
+    "volskaya": {
+      "name_zh": "沃斯卡娅工业区",
+      "mode": "assault",
+      "mode_zh": "攻防作战",
+      "ids": [
+        "576460752303423963"
+      ],
+      "file": "maps/volskaya.jpg",
+      "aliases": [
+        "Volskaya Industries",
+        "volskaya",
+        "volskaya industries",
+        "沃斯卡娅工业区"
+      ],
+      "source_url": ""
+    },
+    "hollywood": {
+      "name_zh": "好莱坞",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303424175",
+        "576460752303425195"
+      ],
+      "file": "maps/hollywood.jpg",
+      "aliases": [
+        "Hollywood",
+        "hollywood",
+        "好莱坞"
+      ],
+      "source_url": ""
+    },
+    "dorado": {
+      "name_zh": "多拉多",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303424195"
+      ],
+      "file": "maps/dorado.jpg",
+      "aliases": [
+        "Dorado",
+        "dorado",
+        "多拉多"
+      ],
+      "source_url": ""
+    },
+    "nepal": {
+      "name_zh": "尼泊尔",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303424695"
+      ],
+      "file": "maps/nepal.jpg",
+      "aliases": [
+        "Nepal",
+        "nepal",
+        "尼泊尔"
+      ],
+      "source_url": ""
+    },
+    "route-66": {
+      "name_zh": "66号公路",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303424955"
+      ],
+      "file": "maps/route-66.jpg",
+      "aliases": [
+        "66号公路",
+        "Route 66",
+        "route 66",
+        "route-66"
+      ],
+      "source_url": ""
+    },
+    "lijiang-tower": {
+      "name_zh": "漓江塔",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303425122"
+      ],
+      "file": "maps/lijiang-tower.jpg",
+      "aliases": [
+        "Lijiang Tower",
+        "lijiang tower",
+        "lijiang-tower",
+        "漓江塔"
+      ],
+      "source_url": ""
+    },
+    "ilios": {
+      "name_zh": "伊利奥斯",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303425133"
+      ],
+      "file": "maps/ilios.jpg",
+      "aliases": [
+        "Ilios",
+        "ilios",
+        "伊利奥斯"
+      ],
+      "source_url": ""
+    },
+    "eichenwalde": {
+      "name_zh": "艾兴瓦尔德",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303425165"
+      ],
+      "file": "maps/eichenwalde.jpg",
+      "aliases": [
+        "Eichenwalde",
+        "eichenwalde",
+        "艾兴瓦尔德"
+      ],
+      "source_url": ""
+    },
+    "oasis": {
+      "name_zh": "绿洲城",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303425182"
+      ],
+      "file": "maps/oasis.jpg",
+      "aliases": [
+        "Oasis",
+        "oasis",
+        "绿洲城"
+      ],
+      "source_url": ""
+    },
+    "junkertown": {
+      "name_zh": "渣客镇",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303425366"
+      ],
+      "file": "maps/junkertown.jpg",
+      "aliases": [
+        "Junkertown",
+        "junkertown",
+        "渣客镇"
+      ],
+      "source_url": ""
+    },
+    "blizzard-world": {
+      "name_zh": "暴雪世界",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303425374",
+        "576460752303426139"
+      ],
+      "file": "maps/blizzard-world.jpg",
+      "aliases": [
+        "Blizzard World",
+        "blizzard world",
+        "blizzard-world",
+        "暴雪世界"
+      ],
+      "source_url": ""
+    },
+    "busan": {
+      "name_zh": "釜山",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303425506"
+      ],
+      "file": "maps/busan.jpg",
+      "aliases": [
+        "Busan",
+        "busan",
+        "釜山"
+      ],
+      "source_url": ""
+    },
+    "circuit-royal": {
+      "name_zh": "皇家赛道",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303425575"
+      ],
+      "file": "maps/circuit-royal.jpg",
+      "aliases": [
+        "Circuit Royal",
+        "circuit royal",
+        "circuit-royal",
+        "皇家赛道"
+      ],
+      "source_url": ""
+    },
+    "rialto": {
+      "name_zh": "里阿尔托",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303425649"
+      ],
+      "file": "maps/rialto.jpg",
+      "aliases": [
+        "Rialto",
+        "rialto",
+        "里阿尔托"
+      ],
+      "source_url": ""
+    },
+    "paraiso": {
+      "name_zh": "帕拉伊苏",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303425848"
+      ],
+      "file": "maps/paraiso.jpg",
+      "aliases": [
+        "Paraíso",
+        "paraiso",
+        "paraíso",
+        "帕拉伊苏"
+      ],
+      "source_url": ""
+    },
+    "havana": {
+      "name_zh": "哈瓦那",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303426116",
+        "576460752303428397"
+      ],
+      "file": "maps/havana.jpg",
+      "aliases": [
+        "Havana",
+        "havana",
+        "哈瓦那"
+      ],
+      "source_url": ""
+    },
+    "new-queen-street": {
+      "name_zh": "新皇后街",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303426283"
+      ],
+      "file": "maps/new-queen-street.jpg",
+      "aliases": [
+        "New Queen Street",
+        "new queen street",
+        "new-queen-street",
+        "新皇后街"
+      ],
+      "source_url": ""
+    },
+    "colosseo": {
+      "name_zh": "斗兽场",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303426356",
+        "576460752303427634",
+        "576460752303428279"
+      ],
+      "file": "maps/colosseo.jpg",
+      "aliases": [
+        "Colosseo",
+        "colosseo",
+        "斗兽场"
+      ],
+      "source_url": ""
+    },
+    "midtown": {
+      "name_zh": "中城",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303426380"
+      ],
+      "file": "maps/midtown.jpg",
+      "aliases": [
+        "Midtown",
+        "midtown",
+        "中城"
+      ],
+      "source_url": ""
+    },
+    "shambali-monastery": {
+      "name_zh": "香巴里寺院",
+      "mode": "escort",
+      "mode_zh": "运载目标",
+      "ids": [
+        "576460752303426693"
+      ],
+      "file": "maps/shambali-monastery.jpg",
+      "aliases": [
+        "Shambali Monastery",
+        "shambali monastery",
+        "shambali-monastery",
+        "香巴里寺院"
+      ],
+      "source_url": ""
+    },
+    "antarctic-peninsula": {
+      "name_zh": "南极半岛",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303426802",
+        "576460752303427798"
+      ],
+      "file": "maps/antarctic-peninsula.jpg",
+      "aliases": [
+        "Antarctic Peninsula",
+        "antarctic peninsula",
+        "antarctic-peninsula",
+        "南极半岛"
+      ],
+      "source_url": ""
+    },
+    "suravasa": {
+      "name_zh": "苏拉瓦萨",
+      "mode": "flashpoint",
+      "mode_zh": "闪点作战",
+      "ids": [
+        "576460752303426878"
+      ],
+      "file": "maps/suravasa.jpg",
+      "aliases": [
+        "Suravasa",
+        "suravasa",
+        "苏拉瓦萨"
+      ],
+      "source_url": ""
+    },
+    "esperanca": {
+      "name_zh": "埃斯佩兰萨",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303426899"
+      ],
+      "file": "maps/esperanca.jpg",
+      "aliases": [
+        "Esperança",
+        "esperanca",
+        "esperança",
+        "埃斯佩兰萨"
+      ],
+      "source_url": ""
+    },
+    "new-junk-city": {
+      "name_zh": "新渣客城",
+      "mode": "flashpoint",
+      "mode_zh": "闪点作战",
+      "ids": [
+        "576460752303427091"
+      ],
+      "file": "maps/new-junk-city.jpg",
+      "aliases": [
+        "New Junk City",
+        "new junk city",
+        "new-junk-city",
+        "新渣客城"
+      ],
+      "source_url": ""
+    },
+    "runasapi": {
+      "name_zh": "鲁纳塞彼",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303427250"
+      ],
+      "file": "maps/runasapi.jpg",
+      "aliases": [
+        "Runasapi",
+        "runasapi",
+        "鲁纳塞彼"
+      ],
+      "source_url": ""
+    },
+    "samoa": {
+      "name_zh": "萨摩亚",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303427264"
+      ],
+      "file": "maps/samoa.jpg",
+      "aliases": [
+        "Samoa",
+        "samoa",
+        "萨摩亚"
+      ],
+      "source_url": ""
+    },
+    "aatlis": {
+      "name_zh": "阿特利斯",
+      "mode": "flashpoint",
+      "mode_zh": "闪点作战",
+      "ids": [
+        "576460752303427381"
+      ],
+      "file": "maps/aatlis.jpg",
+      "aliases": [
+        "Aatlis",
+        "aatlis",
+        "阿特利斯"
+      ],
+      "source_url": ""
+    },
+    "neon-nexus": {
+      "name_zh": "霓虹枢纽",
+      "mode": "hybrid",
+      "mode_zh": "攻击/护送",
+      "ids": [
+        "576460752303427628"
+      ],
+      "file": "maps/neon-nexus.png",
+      "aliases": [
+        "neon nexus",
+        "neon-nexus",
+        "霓虹枢纽"
+      ],
+      "source_url": "https://img.166.net/gameyw-misc/opd/squash/20260617/181740-39ev54w1oa.png"
+    },
+    "hanaoka": {
+      "name_zh": "花冈",
+      "mode": "clash",
+      "mode_zh": "攻防阵线",
+      "ids": [
+        "576460752303427927",
+        "576460752303428278"
+      ],
+      "file": "maps/hanaoka.jpg",
+      "aliases": [
+        "Hanaoka",
+        "hanaoka",
+        "花冈"
+      ],
+      "source_url": ""
+    },
+    "throne-of-anubis": {
+      "name_zh": "阿努比斯王座",
+      "mode": "clash",
+      "mode_zh": "攻防阵线",
+      "ids": [
+        "576460752303427936",
+        "576460752303428277"
+      ],
+      "file": "maps/throne-of-anubis.jpg",
+      "aliases": [
+        "Throne of Anubis",
+        "throne of anubis",
+        "throne-of-anubis",
+        "阿努比斯王座"
+      ],
+      "source_url": ""
+    },
+    "gogadoro": {
+      "name_zh": "高架车站",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303428186"
+      ],
+      "file": "maps/gogadoro.jpg",
+      "aliases": [
+        "Gogadoro",
+        "gogadoro",
+        "高架车站"
+      ],
+      "source_url": ""
+    },
+    "place-lacroix": {
+      "name_zh": "拉克瓦广场",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303428190"
+      ],
+      "file": "maps/place-lacroix.jpg",
+      "aliases": [
+        "Place Lacroix",
+        "place lacroix",
+        "place-lacroix",
+        "拉克瓦广场"
+      ],
+      "source_url": ""
+    },
+    "redwood-dam": {
+      "name_zh": "红杉水坝",
+      "mode": "push",
+      "mode_zh": "机动推进",
+      "ids": [
+        "576460752303428192"
+      ],
+      "file": "maps/redwood-dam.jpg",
+      "aliases": [
+        "Redwood Dam",
+        "redwood dam",
+        "redwood-dam",
+        "红杉水坝"
+      ],
+      "source_url": ""
+    },
+    "arena-victoriae": {
+      "name_zh": "维多利亚竞技场",
+      "mode": "control",
+      "mode_zh": "占领要点",
+      "ids": [
+        "576460752303428266"
+      ],
+      "file": "maps/arena-victoriae.jpg",
+      "aliases": [
+        "Arena Victoriae",
+        "arena victoriae",
+        "arena-victoriae",
+        "维多利亚竞技场"
+      ],
+      "source_url": ""
+    }
+  },
+  "map_modes": {
+    "control": {
+      "name_zh": "占领要点",
+      "file": "map_modes/control.png",
+      "aliases": [
+        "control",
+        "占领要点"
+      ]
+    },
+    "escort": {
+      "name_zh": "运载目标",
+      "file": "map_modes/escort.png",
+      "aliases": [
+        "escort",
+        "运载目标"
+      ]
+    },
+    "hybrid": {
+      "name_zh": "攻击/护送",
+      "file": "map_modes/hybrid.png",
+      "aliases": [
+        "hybrid",
+        "攻击/护送",
+        "攻击护送"
+      ]
+    },
+    "push": {
+      "name_zh": "机动推进",
+      "file": "map_modes/push.png",
+      "aliases": [
+        "push",
+        "机动推进"
+      ]
+    },
+    "flashpoint": {
+      "name_zh": "闪点作战",
+      "file": "map_modes/flashpoint.png",
+      "aliases": [
+        "flashpoint",
+        "闪点作战"
+      ]
+    },
+    "clash": {
+      "name_zh": "攻防阵线",
+      "file": "map_modes/clash.png",
+      "aliases": [
+        "clash",
+        "攻防阵线"
+      ]
+    },
+    "assault": {
+      "name_zh": "攻防作战",
+      "file": "map_modes/assault.png",
+      "aliases": [
+        "assault",
+        "攻防作战"
+      ]
+    },
+    "deathmatch": {
+      "name_zh": "死斗",
+      "file": "",
+      "aliases": [
+        "deathmatch",
+        "team deathmatch",
+        "死斗",
+        "团队死斗"
+      ]
+    },
+    "elimination": {
+      "name_zh": "决斗先锋",
+      "file": "",
+      "aliases": [
+        "elimination",
+        "capture the flag",
+        "决斗先锋",
+        "勇夺锦旗"
+      ]
+    },
+    "stadium": {
+      "name_zh": "角斗领域",
+      "file": "",
+      "aliases": [
+        "stadium",
+        "角斗领域"
+      ]
+    },
+    "unknown": {
+      "name_zh": "未知模式",
+      "file": "map_modes/unknown.png",
+      "aliases": [
+        "unknown",
+        "未知模式"
+      ]
+    }
+  },
+  "source": "https://raw.githubusercontent.com/AddOneSecondL/Overstats/master/res/query_tool.json",
+  "updated_at": 1790701592
+}

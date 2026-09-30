@@ -1,0 +1,50 @@
+# Python / test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments / local env files
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Runtime caches / logs
+cache/
+*.log
+*.tmp
+
+# Local credentials / account state
+dashen_credentials.json
+deepseek_api_key.json
+*credentials*.json
+*session*.json
+
+# Battle.net switcher runtime data
+bnet_switcher/
+BnetSwitchLiteData/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated developer preview / raw download intermediates
+assets/_source/
+tools/preview_profile.png
+tools/preview_detail.png
+
+# Windows release build outputs
+/.venv-build/
+/.build/
+/dist/
+/release/
+/packaging/windows/_generated/
+
+# Local UI preview avatar
+/preview_account_avatar.png

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "checkpoints": [500, 1000, 1600, 2200, 3000, 4000],
+  "modes": {
+    "normal": {
+      "name": "普通竞技",
+      "win_points": 210,
+      "group_bonus": 50,
+      "loss_penalties": [0, 21, 21, 42, 42, 63]
+    },
+    "duel": {
+      "name": "决斗 / 角斗",
+      "win_points": 265,
+      "group_bonus": 50,
+      "loss_penalties": [0, 27, 27, 53, 53, 80]
+    }
+  },
+  "dp": {
+    "max_games": 5000,
+    "epsilon": 1e-13
+  }
+}

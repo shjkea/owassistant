@@ -1,0 +1,9 @@
+[project]
+name = "ow-bnet-switcher-backend"
+version = "0.1.0"
+description = "UI-agnostic Battle.net account switcher backend for Windows"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bnet_backend*"]

@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+bnet_switcher/
+BnetSwitchLiteData/

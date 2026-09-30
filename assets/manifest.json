@@ -1,0 +1,1444 @@
+{
+  "generated_at": 1790701592,
+  "heroes": {
+    "ana": {
+      "file": "heroes/ana.png",
+      "name_en": "Ana",
+      "role": "support",
+      "aliases": [
+        "Ana",
+        "ana",
+        "安娜"
+      ],
+      "source_url": ""
+    },
+    "anran": {
+      "file": "heroes/anran.png",
+      "name_en": "Anran",
+      "role": "damage",
+      "aliases": [
+        "Anran",
+        "anran",
+        "安燃"
+      ],
+      "source_url": ""
+    },
+    "ashe": {
+      "file": "heroes/ashe.png",
+      "name_en": "Ashe",
+      "role": "damage",
+      "aliases": [
+        "Ashe",
+        "ashe",
+        "艾什"
+      ],
+      "source_url": ""
+    },
+    "baptiste": {
+      "file": "heroes/baptiste.png",
+      "name_en": "Baptiste",
+      "role": "support",
+      "aliases": [
+        "Baptiste",
+        "baptiste",
+        "巴蒂斯特"
+      ],
+      "source_url": ""
+    },
+    "bastion": {
+      "file": "heroes/bastion.png",
+      "name_en": "Bastion",
+      "role": "damage",
+      "aliases": [
+        "Bastion",
+        "bastion",
+        "堡垒"
+      ],
+      "source_url": ""
+    },
+    "brigitte": {
+      "file": "heroes/brigitte.png",
+      "name_en": "Brigitte",
+      "role": "support",
+      "aliases": [
+        "Brigitte",
+        "brigitte",
+        "布丽吉塔"
+      ],
+      "source_url": ""
+    },
+    "cassidy": {
+      "file": "heroes/cassidy.png",
+      "name_en": "Cassidy",
+      "role": "damage",
+      "aliases": [
+        "Cassidy",
+        "cassidy",
+        "卡西迪"
+      ],
+      "source_url": ""
+    },
+    "dmon": {
+      "file": "heroes/dmon.png",
+      "name_en": "D.Mon",
+      "role": "tank",
+      "aliases": [
+        "D.Mon",
+        "d.mon",
+        "dmon"
+      ],
+      "source_url": ""
+    },
+    "domina": {
+      "file": "heroes/domina.png",
+      "name_en": "Domina",
+      "role": "tank",
+      "aliases": [
+        "Domina",
+        "domina",
+        "金驭"
+      ],
+      "source_url": ""
+    },
+    "doomfist": {
+      "file": "heroes/doomfist.png",
+      "name_en": "Doomfist",
+      "role": "tank",
+      "aliases": [
+        "Doomfist",
+        "doomfist",
+        "末日铁拳"
+      ],
+      "source_url": ""
+    },
+    "dva": {
+      "file": "heroes/dva.png",
+      "name_en": "D.Va",
+      "role": "tank",
+      "aliases": [
+        "D.Va",
+        "d va",
+        "d.va",
+        "dva"
+      ],
+      "source_url": ""
+    },
+    "echo": {
+      "file": "heroes/echo.png",
+      "name_en": "Echo",
+      "role": "damage",
+      "aliases": [
+        "Echo",
+        "echo",
+        "回声"
+      ],
+      "source_url": ""
+    },
+    "emre": {
+      "file": "heroes/emre.png",
+      "name_en": "Emre",
+      "role": "damage",
+      "aliases": [
+        "Emre",
+        "emre",
+        "埃姆雷"
+      ],
+      "source_url": ""
+    },
+    "freja": {
+      "file": "heroes/freja.png",
+      "name_en": "Freja",
+      "role": "damage",
+      "aliases": [
+        "Freja",
+        "freja",
+        "弗蕾娅"
+      ],
+      "source_url": ""
+    },
+    "genji": {
+      "file": "heroes/genji.png",
+      "name_en": "Genji",
+      "role": "damage",
+      "aliases": [
+        "Genji",
+        "genji",
+        "源氏"
+      ],
+      "source_url": ""
+    },
+    "hanzo": {
+      "file": "heroes/hanzo.png",
+      "name_en": "Hanzo",
+      "role": "damage",
+      "aliases": [
+        "Hanzo",
+        "hanzo",
+        "半藏"
+      ],
+      "source_url": ""
+    },
+    "hazard": {
+      "file": "heroes/hazard.png",
+      "name_en": "Hazard",
+      "role": "tank",
+      "aliases": [
+        "Hazard",
+        "hazard",
+        "骇灾"
+      ],
+      "source_url": ""
+    },
+    "illari": {
+      "file": "heroes/illari.png",
+      "name_en": "Illari",
+      "role": "support",
+      "aliases": [
+        "Illari",
+        "illari",
+        "伊拉锐"
+      ],
+      "source_url": ""
+    },
+    "jetpack-cat": {
+      "file": "heroes/jetpack-cat.png",
+      "name_en": "Jetpack Cat",
+      "role": "support",
+      "aliases": [
+        "Jetpack Cat",
+        "jetpack cat",
+        "jetpack-cat",
+        "jetpackcat",
+        "飞天猫"
+      ],
+      "source_url": ""
+    },
+    "junker-queen": {
+      "file": "heroes/junker-queen.png",
+      "name_en": "Junker Queen",
+      "role": "tank",
+      "aliases": [
+        "Junker Queen",
+        "junker queen",
+        "junker-queen",
+        "junkerqueen",
+        "渣客女王"
+      ],
+      "source_url": ""
+    },
+    "junkrat": {
+      "file": "heroes/junkrat.png",
+      "name_en": "Junkrat",
+      "role": "damage",
+      "aliases": [
+        "Junkrat",
+        "junkrat",
+        "狂鼠"
+      ],
+      "source_url": ""
+    },
+    "juno": {
+      "file": "heroes/juno.png",
+      "name_en": "Juno",
+      "role": "support",
+      "aliases": [
+        "Juno",
+        "juno",
+        "朱诺"
+      ],
+      "source_url": ""
+    },
+    "kiriko": {
+      "file": "heroes/kiriko.png",
+      "name_en": "Kiriko",
+      "role": "support",
+      "aliases": [
+        "Kiriko",
+        "kiriko",
+        "雾子"
+      ],
+      "source_url": ""
+    },
+    "lifeweaver": {
+      "file": "heroes/lifeweaver.png",
+      "name_en": "Lifeweaver",
+      "role": "support",
+      "aliases": [
+        "Lifeweaver",
+        "lifeweaver",
+        "生命之梭"
+      ],
+      "source_url": ""
+    },
+    "lucio": {
+      "file": "heroes/lucio.png",
+      "name_en": "Lúcio",
+      "role": "support",
+      "aliases": [
+        "Lúcio",
+        "lucio",
+        "lúcio",
+        "卢西奥"
+      ],
+      "source_url": ""
+    },
+    "mauga": {
+      "file": "heroes/mauga.png",
+      "name_en": "Mauga",
+      "role": "tank",
+      "aliases": [
+        "Mauga",
+        "mauga",
+        "毛加"
+      ],
+      "source_url": ""
+    },
+    "mei": {
+      "file": "heroes/mei.png",
+      "name_en": "Mei",
+      "role": "damage",
+      "aliases": [
+        "Mei",
+        "mei",
+        "美"
+      ],
+      "source_url": ""
+    },
+    "mercy": {
+      "file": "heroes/mercy.png",
+      "name_en": "Mercy",
+      "role": "support",
+      "aliases": [
+        "Mercy",
+        "mercy",
+        "天使"
+      ],
+      "source_url": ""
+    },
+    "mizuki": {
+      "file": "heroes/mizuki.png",
+      "name_en": "Mizuki",
+      "role": "support",
+      "aliases": [
+        "Mizuki",
+        "mizuki",
+        "瑞稀"
+      ],
+      "source_url": ""
+    },
+    "moira": {
+      "file": "heroes/moira.png",
+      "name_en": "Moira",
+      "role": "support",
+      "aliases": [
+        "Moira",
+        "moira",
+        "莫伊拉"
+      ],
+      "source_url": ""
+    },
+    "orisa": {
+      "file": "heroes/orisa.png",
+      "name_en": "Orisa",
+      "role": "tank",
+      "aliases": [
+        "Orisa",
+        "orisa",
+        "奥丽莎"
+      ],
+      "source_url": ""
+    },
+    "pharah": {
+      "file": "heroes/pharah.png",
+      "name_en": "Pharah",
+      "role": "damage",
+      "aliases": [
+        "Pharah",
+        "pharah",
+        "法老之鹰"
+      ],
+      "source_url": ""
+    },
+    "ramattra": {
+      "file": "heroes/ramattra.png",
+      "name_en": "Ramattra",
+      "role": "tank",
+      "aliases": [
+        "Ramattra",
+        "ramattra",
+        "拉玛刹"
+      ],
+      "source_url": ""
+    },
+    "reaper": {
+      "file": "heroes/reaper.png",
+      "name_en": "Reaper",
+      "role": "damage",
+      "aliases": [
+        "Reaper",
+        "reaper",
+        "死神"
+      ],
+      "source_url": ""
+    },
+    "reinhardt": {
+      "file": "heroes/reinhardt.png",
+      "name_en": "Reinhardt",
+      "role": "tank",
+      "aliases": [
+        "Reinhardt",
+        "reinhardt",
+        "莱因哈特"
+      ],
+      "source_url": ""
+    },
+    "roadhog": {
+      "file": "heroes/roadhog.png",
+      "name_en": "Roadhog",
+      "role": "tank",
+      "aliases": [
+        "Roadhog",
+        "roadhog",
+        "路霸"
+      ],
+      "source_url": ""
+    },
+    "shion": {
+      "file": "heroes/shion.png",
+      "name_en": "Shion",
+      "role": "damage",
+      "aliases": [
+        "Shion",
+        "shion",
+        "死怨"
+      ],
+      "source_url": ""
+    },
+    "sierra": {
+      "file": "heroes/sierra.png",
+      "name_en": "Sierra",
+      "role": "damage",
+      "aliases": [
+        "Sierra",
+        "sierra",
+        "西拉"
+      ],
+      "source_url": ""
+    },
+    "sigma": {
+      "file": "heroes/sigma.png",
+      "name_en": "Sigma",
+      "role": "tank",
+      "aliases": [
+        "Sigma",
+        "sigma",
+        "西格玛"
+      ],
+      "source_url": ""
+    },
+    "sojourn": {
+      "file": "heroes/sojourn.png",
+      "name_en": "Sojourn",
+      "role": "damage",
+      "aliases": [
+        "Sojourn",
+        "sojourn",
+        "索杰恩"
+      ],
+      "source_url": ""
+    },
+    "soldier-76": {
+      "file": "heroes/soldier-76.png",
+      "name_en": "Soldier: 76",
+      "role": "damage",
+      "aliases": [
+        "Soldier: 76",
+        "soldier 76",
+        "soldier-76",
+        "soldier76",
+        "soldier: 76",
+        "士兵：76"
+      ],
+      "source_url": ""
+    },
+    "sombra": {
+      "file": "heroes/sombra.png",
+      "name_en": "Sombra",
+      "role": "damage",
+      "aliases": [
+        "Sombra",
+        "sombra",
+        "黑影"
+      ],
+      "source_url": ""
+    },
+    "symmetra": {
+      "file": "heroes/symmetra.png",
+      "name_en": "Symmetra",
+      "role": "damage",
+      "aliases": [
+        "Symmetra",
+        "symmetra",
+        "秩序之光"
+      ],
+      "source_url": ""
+    },
+    "torbjorn": {
+      "file": "heroes/torbjorn.png",
+      "name_en": "Torbjörn",
+      "role": "damage",
+      "aliases": [
+        "Torbjörn",
+        "torbjorn",
+        "torbjörn",
+        "托比昂"
+      ],
+      "source_url": ""
+    },
+    "tracer": {
+      "file": "heroes/tracer.png",
+      "name_en": "Tracer",
+      "role": "damage",
+      "aliases": [
+        "Tracer",
+        "tracer",
+        "猎空"
+      ],
+      "source_url": ""
+    },
+    "vendetta": {
+      "file": "heroes/vendetta.png",
+      "name_en": "Vendetta",
+      "role": "damage",
+      "aliases": [
+        "Vendetta",
+        "vendetta",
+        "斩仇"
+      ],
+      "source_url": ""
+    },
+    "venture": {
+      "file": "heroes/venture.png",
+      "name_en": "Venture",
+      "role": "damage",
+      "aliases": [
+        "Venture",
+        "venture",
+        "探奇"
+      ],
+      "source_url": ""
+    },
+    "widowmaker": {
+      "file": "heroes/widowmaker.png",
+      "name_en": "Widowmaker",
+      "role": "damage",
+      "aliases": [
+        "Widowmaker",
+        "widowmaker",
+        "黑百合"
+      ],
+      "source_url": ""
+    },
+    "winston": {
+      "file": "heroes/winston.png",
+      "name_en": "Winston",
+      "role": "tank",
+      "aliases": [
+        "Winston",
+        "winston",
+        "温斯顿"
+      ],
+      "source_url": ""
+    },
+    "wrecking-ball": {
+      "file": "heroes/wrecking-ball.png",
+      "name_en": "Wrecking Ball",
+      "role": "tank",
+      "aliases": [
+        "Wrecking Ball",
+        "hammond",
+        "wrecking ball",
+        "wrecking-ball",
+        "wreckingball",
+        "破坏球"
+      ],
+      "source_url": ""
+    },
+    "wuyang": {
+      "file": "heroes/wuyang.png",
+      "name_en": "Wuyang",
+      "role": "support",
+      "aliases": [
+        "Wuyang",
+        "wuyang",
+        "无漾"
+      ],
+      "source_url": ""
+    },
+    "zarya": {
+      "file": "heroes/zarya.png",
+      "name_en": "Zarya",
+      "role": "tank",
+      "aliases": [
+        "Zarya",
+        "zarya",
+        "查莉娅"
+      ],
+      "source_url": ""
+    },
+    "zenyatta": {
+      "file": "heroes/zenyatta.png",
+      "name_en": "Zenyatta",
+      "role": "support",
+      "aliases": [
+        "Zenyatta",
+        "zenyatta",
+        "禅雅塔"
+      ],
+      "source_url": ""
+    }
+  },
+  "maps": {
+    "aatlis": {
+      "file": "maps/aatlis.jpg",
+      "name_en": "Aatlis",
+      "gamemodes": [
+        "flashpoint"
+      ],
+      "aliases": [
+        "Aatlis",
+        "aatlis",
+        "阿特利斯"
+      ],
+      "source_url": ""
+    },
+    "antarctic-peninsula": {
+      "file": "maps/antarctic-peninsula.jpg",
+      "name_en": "Antarctic Peninsula",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Antarctic Peninsula",
+        "antarctic peninsula",
+        "antarctic-peninsula",
+        "南极半岛"
+      ],
+      "source_url": ""
+    },
+    "anubis": {
+      "file": "maps/anubis.jpg",
+      "name_en": "Temple of Anubis",
+      "gamemodes": [
+        "assault"
+      ],
+      "aliases": [
+        "Temple of Anubis",
+        "anubis",
+        "temple of anubis",
+        "阿努比斯神殿"
+      ],
+      "source_url": ""
+    },
+    "arena-victoriae": {
+      "file": "maps/arena-victoriae.jpg",
+      "name_en": "Arena Victoriae",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Arena Victoriae",
+        "arena victoriae",
+        "arena-victoriae",
+        "维多利亚竞技场"
+      ],
+      "source_url": ""
+    },
+    "ayutthaya": {
+      "file": "maps/ayutthaya.jpg",
+      "name_en": "Ayutthaya",
+      "gamemodes": [
+        "capture-the-flag"
+      ],
+      "aliases": [
+        "ayutthaya"
+      ]
+    },
+    "black-forest": {
+      "file": "maps/black-forest.jpg",
+      "name_en": "Black Forest",
+      "gamemodes": [
+        "elimination"
+      ],
+      "aliases": [
+        "black forest",
+        "black-forest"
+      ]
+    },
+    "blizzard-world": {
+      "file": "maps/blizzard-world.jpg",
+      "name_en": "Blizzard World",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Blizzard World",
+        "blizzard world",
+        "blizzard-world",
+        "暴雪世界"
+      ],
+      "source_url": ""
+    },
+    "busan": {
+      "file": "maps/busan.jpg",
+      "name_en": "Busan",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Busan",
+        "busan",
+        "釜山"
+      ],
+      "source_url": ""
+    },
+    "castillo": {
+      "file": "maps/castillo.jpg",
+      "name_en": "Castillo",
+      "gamemodes": [
+        "elimination"
+      ],
+      "aliases": [
+        "castillo"
+      ]
+    },
+    "chateau-guillard": {
+      "file": "maps/chateau-guillard.jpg",
+      "name_en": "Château Guillard",
+      "gamemodes": [
+        "deathmatch",
+        "team-deathmatch"
+      ],
+      "aliases": [
+        "chateau guillard",
+        "chateau-guillard",
+        "château guillard"
+      ]
+    },
+    "circuit-royal": {
+      "file": "maps/circuit-royal.jpg",
+      "name_en": "Circuit Royal",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Circuit Royal",
+        "circuit royal",
+        "circuit-royal",
+        "皇家赛道"
+      ],
+      "source_url": ""
+    },
+    "colosseo": {
+      "file": "maps/colosseo.jpg",
+      "name_en": "Colosseo",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "Colosseo",
+        "colosseo",
+        "斗兽场"
+      ],
+      "source_url": ""
+    },
+    "dorado": {
+      "file": "maps/dorado.jpg",
+      "name_en": "Dorado",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Dorado",
+        "dorado",
+        "多拉多"
+      ],
+      "source_url": ""
+    },
+    "ecopoint-antarctica": {
+      "file": "maps/ecopoint-antarctica.jpg",
+      "name_en": "Ecopoint: Antarctica",
+      "gamemodes": [
+        "elimination"
+      ],
+      "aliases": [
+        "ecopoint antarctica",
+        "ecopoint-antarctica",
+        "ecopoint: antarctica"
+      ]
+    },
+    "eichenwalde": {
+      "file": "maps/eichenwalde.jpg",
+      "name_en": "Eichenwalde",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Eichenwalde",
+        "eichenwalde",
+        "艾兴瓦尔德"
+      ],
+      "source_url": ""
+    },
+    "esperanca": {
+      "file": "maps/esperanca.jpg",
+      "name_en": "Esperança",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "Esperança",
+        "esperanca",
+        "esperança",
+        "埃斯佩兰萨"
+      ],
+      "source_url": ""
+    },
+    "gogadoro": {
+      "file": "maps/gogadoro.jpg",
+      "name_en": "Gogadoro",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Gogadoro",
+        "gogadoro",
+        "高架车站"
+      ],
+      "source_url": ""
+    },
+    "hanamura": {
+      "file": "maps/hanamura.jpg",
+      "name_en": "Hanamura",
+      "gamemodes": [
+        "assault"
+      ],
+      "aliases": [
+        "Hanamura",
+        "hanamura",
+        "花村"
+      ],
+      "source_url": ""
+    },
+    "hanaoka": {
+      "file": "maps/hanaoka.jpg",
+      "name_en": "Hanaoka",
+      "gamemodes": [
+        "clash"
+      ],
+      "aliases": [
+        "Hanaoka",
+        "hanaoka",
+        "花冈"
+      ],
+      "source_url": ""
+    },
+    "havana": {
+      "file": "maps/havana.jpg",
+      "name_en": "Havana",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Havana",
+        "havana",
+        "哈瓦那"
+      ],
+      "source_url": ""
+    },
+    "hollywood": {
+      "file": "maps/hollywood.jpg",
+      "name_en": "Hollywood",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Hollywood",
+        "hollywood",
+        "好莱坞"
+      ],
+      "source_url": ""
+    },
+    "horizon": {
+      "file": "maps/horizon.jpg",
+      "name_en": "Horizon Lunar Colony",
+      "gamemodes": [
+        "assault"
+      ],
+      "aliases": [
+        "horizon",
+        "horizon lunar colony"
+      ]
+    },
+    "ilios": {
+      "file": "maps/ilios.jpg",
+      "name_en": "Ilios",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Ilios",
+        "ilios",
+        "伊利奥斯"
+      ],
+      "source_url": ""
+    },
+    "junkertown": {
+      "file": "maps/junkertown.jpg",
+      "name_en": "Junkertown",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Junkertown",
+        "junkertown",
+        "渣客镇"
+      ],
+      "source_url": ""
+    },
+    "lijiang-tower": {
+      "file": "maps/lijiang-tower.jpg",
+      "name_en": "Lijiang Tower",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Lijiang Tower",
+        "lijiang tower",
+        "lijiang-tower",
+        "漓江塔"
+      ],
+      "source_url": ""
+    },
+    "kanezaka": {
+      "file": "maps/kanezaka.jpg",
+      "name_en": "Kanezaka",
+      "gamemodes": [
+        "deathmatch",
+        "team-deathmatch"
+      ],
+      "aliases": [
+        "kanezaka"
+      ]
+    },
+    "kings-row": {
+      "file": "maps/kings-row.jpg",
+      "name_en": "King’s Row",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "King’s Row",
+        "kings row",
+        "kings-row",
+        "king’s row",
+        "国王大道"
+      ],
+      "source_url": ""
+    },
+    "malevento": {
+      "file": "maps/malevento.jpg",
+      "name_en": "Malevento",
+      "gamemodes": [
+        "deathmatch",
+        "team-deathmatch"
+      ],
+      "aliases": [
+        "malevento"
+      ]
+    },
+    "midtown": {
+      "file": "maps/midtown.jpg",
+      "name_en": "Midtown",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Midtown",
+        "midtown",
+        "中城"
+      ],
+      "source_url": ""
+    },
+    "necropolis": {
+      "file": "maps/necropolis.jpg",
+      "name_en": "Necropolis",
+      "gamemodes": [
+        "elimination"
+      ],
+      "aliases": [
+        "necropolis"
+      ]
+    },
+    "nepal": {
+      "file": "maps/nepal.jpg",
+      "name_en": "Nepal",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Nepal",
+        "nepal",
+        "尼泊尔"
+      ],
+      "source_url": ""
+    },
+    "new-junk-city": {
+      "file": "maps/new-junk-city.jpg",
+      "name_en": "New Junk City",
+      "gamemodes": [
+        "flashpoint"
+      ],
+      "aliases": [
+        "New Junk City",
+        "new junk city",
+        "new-junk-city",
+        "新渣客城"
+      ],
+      "source_url": ""
+    },
+    "new-queen-street": {
+      "file": "maps/new-queen-street.jpg",
+      "name_en": "New Queen Street",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "New Queen Street",
+        "new queen street",
+        "new-queen-street",
+        "新皇后街"
+      ],
+      "source_url": ""
+    },
+    "numbani": {
+      "file": "maps/numbani.jpg",
+      "name_en": "Numbani",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Numbani",
+        "numbani",
+        "努巴尼"
+      ],
+      "source_url": ""
+    },
+    "oasis": {
+      "file": "maps/oasis.jpg",
+      "name_en": "Oasis",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Oasis",
+        "oasis",
+        "绿洲城"
+      ],
+      "source_url": ""
+    },
+    "paraiso": {
+      "file": "maps/paraiso.jpg",
+      "name_en": "Paraíso",
+      "gamemodes": [
+        "hybrid"
+      ],
+      "aliases": [
+        "Paraíso",
+        "paraiso",
+        "paraíso",
+        "帕拉伊苏"
+      ],
+      "source_url": ""
+    },
+    "paris": {
+      "file": "maps/paris.jpg",
+      "name_en": "Paris",
+      "gamemodes": [
+        "assault"
+      ],
+      "aliases": [
+        "paris"
+      ]
+    },
+    "petra": {
+      "file": "maps/petra.jpg",
+      "name_en": "Petra",
+      "gamemodes": [
+        "deathmatch",
+        "team-deathmatch"
+      ],
+      "aliases": [
+        "petra"
+      ]
+    },
+    "place-lacroix": {
+      "file": "maps/place-lacroix.jpg",
+      "name_en": "Place Lacroix",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "Place Lacroix",
+        "place lacroix",
+        "place-lacroix",
+        "拉克瓦广场"
+      ],
+      "source_url": ""
+    },
+    "powder-keg-mine": {
+      "file": "maps/powder-keg-mine.jpg",
+      "name_en": "Powder Keg Mine",
+      "gamemodes": [
+        "payload-race"
+      ],
+      "aliases": [
+        "powder keg mine",
+        "powder-keg-mine"
+      ]
+    },
+    "practice-range": {
+      "file": "maps/practice-range.jpg",
+      "name_en": "Practice Range",
+      "gamemodes": [
+        "practice-range"
+      ],
+      "aliases": [
+        "practice range",
+        "practice-range"
+      ]
+    },
+    "redwood-dam": {
+      "file": "maps/redwood-dam.jpg",
+      "name_en": "Redwood Dam",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "Redwood Dam",
+        "redwood dam",
+        "redwood-dam",
+        "红杉水坝"
+      ],
+      "source_url": ""
+    },
+    "rialto": {
+      "file": "maps/rialto.jpg",
+      "name_en": "Rialto",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Rialto",
+        "rialto",
+        "里阿尔托"
+      ],
+      "source_url": ""
+    },
+    "route-66": {
+      "file": "maps/route-66.jpg",
+      "name_en": "Route 66",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "66号公路",
+        "Route 66",
+        "route 66",
+        "route-66"
+      ],
+      "source_url": ""
+    },
+    "runasapi": {
+      "file": "maps/runasapi.jpg",
+      "name_en": "Runasapi",
+      "gamemodes": [
+        "push"
+      ],
+      "aliases": [
+        "Runasapi",
+        "runasapi",
+        "鲁纳塞彼"
+      ],
+      "source_url": ""
+    },
+    "samoa": {
+      "file": "maps/samoa.jpg",
+      "name_en": "Samoa",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "Samoa",
+        "samoa",
+        "萨摩亚"
+      ],
+      "source_url": ""
+    },
+    "shambali-monastery": {
+      "file": "maps/shambali-monastery.jpg",
+      "name_en": "Shambali Monastery",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Shambali Monastery",
+        "shambali monastery",
+        "shambali-monastery",
+        "香巴里寺院"
+      ],
+      "source_url": ""
+    },
+    "suravasa": {
+      "file": "maps/suravasa.jpg",
+      "name_en": "Suravasa",
+      "gamemodes": [
+        "flashpoint"
+      ],
+      "aliases": [
+        "Suravasa",
+        "suravasa",
+        "苏拉瓦萨"
+      ],
+      "source_url": ""
+    },
+    "thames-district": {
+      "file": "maps/thames-district.jpg",
+      "name_en": "Thames District",
+      "gamemodes": [
+        "payload-race"
+      ],
+      "aliases": [
+        "thames district",
+        "thames-district"
+      ]
+    },
+    "throne-of-anubis": {
+      "file": "maps/throne-of-anubis.jpg",
+      "name_en": "Throne of Anubis",
+      "gamemodes": [
+        "clash"
+      ],
+      "aliases": [
+        "Throne of Anubis",
+        "throne of anubis",
+        "throne-of-anubis",
+        "阿努比斯王座"
+      ],
+      "source_url": ""
+    },
+    "volskaya": {
+      "file": "maps/volskaya.jpg",
+      "name_en": "Volskaya Industries",
+      "gamemodes": [
+        "assault"
+      ],
+      "aliases": [
+        "Volskaya Industries",
+        "volskaya",
+        "volskaya industries",
+        "沃斯卡娅工业区"
+      ],
+      "source_url": ""
+    },
+    "watchpoint-gibraltar": {
+      "file": "maps/watchpoint-gibraltar.jpg",
+      "name_en": "Watchpoint: Gibraltar",
+      "gamemodes": [
+        "escort"
+      ],
+      "aliases": [
+        "Watchpoint: Gibraltar",
+        "watchpoint gibraltar",
+        "watchpoint-gibraltar",
+        "watchpoint: gibraltar",
+        "监测站：直布罗陀"
+      ],
+      "source_url": ""
+    },
+    "workshop-chamber": {
+      "file": "maps/workshop-chamber.jpg",
+      "name_en": "Workshop Chamber",
+      "gamemodes": [
+        "workshop"
+      ],
+      "aliases": [
+        "workshop chamber",
+        "workshop-chamber"
+      ]
+    },
+    "workshop-expanse": {
+      "file": "maps/workshop-expanse.jpg",
+      "name_en": "Workshop Expanse",
+      "gamemodes": [
+        "workshop"
+      ],
+      "aliases": [
+        "workshop expanse",
+        "workshop-expanse"
+      ]
+    },
+    "workshop-green-screen": {
+      "file": "maps/workshop-green-screen.jpg",
+      "name_en": "Workshop Green Screen",
+      "gamemodes": [
+        "workshop"
+      ],
+      "aliases": [
+        "workshop green screen",
+        "workshop-green-screen"
+      ]
+    },
+    "workshop-island": {
+      "file": "maps/workshop-island.jpg",
+      "name_en": "Workshop Island",
+      "gamemodes": [
+        "workshop"
+      ],
+      "aliases": [
+        "workshop island",
+        "workshop-island"
+      ]
+    },
+    "wuxing-university": {
+      "file": "maps/wuxing-university.jpg",
+      "name_en": "Wuxing University",
+      "gamemodes": [
+        "control"
+      ],
+      "aliases": [
+        "wuxing university",
+        "wuxing-university"
+      ]
+    }
+  },
+  "roles": {
+    "tank": "roles/tank.png",
+    "dps": "roles/dps.png",
+    "healer": "roles/healer.png",
+    "open": "roles/open.png"
+  },
+  "roles_meta": {
+    "dps": {
+      "file": "roles/dps.png",
+      "source": "game_reference"
+    },
+    "tank": {
+      "file": "roles/tank.png",
+      "source": "game_reference"
+    },
+    "healer": {
+      "file": "roles/healer.png",
+      "source": "game_reference"
+    }
+  },
+  "ranks": {
+    "bronze": "ranks/bronze.png",
+    "silver": "ranks/silver.png",
+    "gold": "ranks/gold.png",
+    "platinum": "ranks/platinum.png",
+    "emerald": "ranks/emerald.png",
+    "diamond": "ranks/diamond.png",
+    "master": "ranks/master.png",
+    "grandmaster": "ranks/grandmaster.png",
+    "champion": "ranks/champion.png",
+    "unranked": "ranks/unranked.png"
+  },
+  "ranks_meta": {
+    "grandmaster": {
+      "file": "ranks/grandmaster.png",
+      "source": "game_reference"
+    },
+    "platinum": {
+      "file": "ranks/platinum.png",
+      "source": "game_reference"
+    },
+    "diamond": {
+      "file": "ranks/diamond.png",
+      "source": "game_reference"
+    },
+    "gold": {
+      "file": "ranks/gold.png",
+      "source": "game_reference"
+    },
+    "bronze": {
+      "file": "ranks/bronze.png",
+      "source": "game_reference"
+    },
+    "champion": {
+      "file": "ranks/champion.png",
+      "source": "game_reference"
+    },
+    "silver": {
+      "file": "ranks/silver.png",
+      "source": "game_reference"
+    },
+    "master": {
+      "file": "ranks/master.png",
+      "source": "game_reference"
+    },
+    "emerald": {
+      "file": "ranks/emerald.png",
+      "source": "blizzard_promo_extracted",
+      "source_url": "https://media.dotesports.com/wp-content/uploads/2026/08/overwatch-emerald-rank-1024x576.webp"
+    },
+    "unranked": {
+      "file": "ranks/unranked.png",
+      "source": "generated_neutral_placeholder"
+    }
+  },
+  "map_modes": {
+    "control": "map_modes/control.png",
+    "escort": "map_modes/escort.png",
+    "hybrid": "map_modes/hybrid.png",
+    "push": "map_modes/push.png",
+    "flashpoint": "map_modes/flashpoint.png",
+    "clash": "map_modes/clash.png",
+    "assault": "map_modes/assault.png",
+    "unknown": "map_modes/unknown.png"
+  },
+  "map_modes_meta": {
+    "push": {
+      "file": "map_modes/push.png",
+      "source": "game_reference"
+    },
+    "hybrid": {
+      "file": "map_modes/hybrid.png",
+      "source": "game_reference"
+    },
+    "escort": {
+      "file": "map_modes/escort.png",
+      "source": "game_reference"
+    },
+    "control": {
+      "file": "map_modes/control.png",
+      "source": "game_reference"
+    },
+    "assault": {
+      "file": "map_modes/assault.png",
+      "source": "game_reference"
+    }
+  },
+  "ui": {
+    "portrait_placeholder": "ui/portrait_placeholder.png",
+    "map_placeholder": "ui/map_placeholder.png"
+  },
+  "sources": {
+    "heroes": "https://overfast-api.tekrop.fr/heroes",
+    "maps": "https://overfast-api.tekrop.fr/maps",
+    "roles": "https://overfast-api.tekrop.fr/roles",
+    "gamemodes": "https://overfast-api.tekrop.fr/gamemodes",
+    "emerald_rank": "https://media.dotesports.com/wp-content/uploads/2026/08/overwatch-emerald-rank-1024x576.webp",
+    "dashen_catalog": "https://raw.githubusercontent.com/AddOneSecondL/Overstats/master/res/query_tool.json"
+  }
+}
