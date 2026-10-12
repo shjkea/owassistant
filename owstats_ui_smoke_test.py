@@ -175,6 +175,20 @@ class FakeService:
             "warnings": [],
         }
 
+    def match_overview_page(self, *, customer_token, cursor=None, limit=20):
+        """与真实 UI 的增量概览接口一致；仅对本地假数据分页。"""
+        history = self.match_history(customer_token=customer_token)
+        rows = sorted(history["matches"], key=lambda row: int(row.get("begin_ts") or 0), reverse=True)
+        offset = int(cursor or 0)
+        end = offset + max(1, int(limit))
+        return {
+            "current_season": self.current_season,
+            "matches": rows[offset:end],
+            "cursor": end,
+            "has_more": end < len(rows),
+            "count": len(rows[offset:end]),
+        }
+
     def match_history(self, battletag=None, *, customer_token=None, season_count=3) -> Dict[str, Any]:
         matches: List[Dict[str, Any]] = []
         base_ts = 1_790_000_000

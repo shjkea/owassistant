@@ -33,3 +33,7 @@ class UpstreamError(OWStatsError):
         self.status_code = status_code
         self.code = code
         self.payload = payload
+
+
+class RequestBlockedError(UpstreamError):
+    """账号查询已停止；业务层不得吞掉或自动重试。"""

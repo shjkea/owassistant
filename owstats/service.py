@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from copy import deepcopy
 from threading import RLock
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 
@@ -9,7 +9,7 @@ from .auth import DashenQRAuth
 from .client import DashenClient
 from .credential_store import CredentialStore
 from .drive_bridge import matches_to_drive_records
-from .errors import MissingCredentialError, UpstreamError
+from .errors import MissingCredentialError, UpstreamError, RequestBlockedError
 from .game_catalog import resolve_hero
 from .models import DashenCredential, QRStart, QRState, ResolvedPlayer
 from .parsers import (
@@ -498,6 +498,68 @@ class OWStatsService:
             "raw_matches": all_raw if include_raw else None,
         }
 
+    def match_overview_page(self, *, customer_token: str, cursor=None, limit: int = 20):
+        """三赛季列表增量分页；只查询概览，不查询详情。游标失败时保持原样。"""
+        limit = max(1, min(int(limit), 100))
+        with self._new_client() as client:
+            self._ensure_current_season(client, customer_token)
+            if cursor is None:
+                state = {"token": customer_token, "seasons": list(self._resolve_seasons(3, None, None)),
+                         "season_index": 0, "streams": None, "seen": []}
+                state["seasons"].sort(reverse=True)
+            else:
+                state = deepcopy(cursor)
+                if state["token"] != customer_token:
+                    raise ValueError("分页游标与当前玩家不匹配")
+            output = []
+            seen = set(state["seen"])
+            while len(output) < limit and state["season_index"] < len(state["seasons"]):
+                season = state["seasons"][state["season_index"]]
+                if state["streams"] is None:
+                    state["streams"] = [{"mode": mode, "page": 1, "buffer": [], "done": False,
+                                         "seen": [], "explicit": False}
+                                        for mode in ("sport", "leisure", *DEFAULT_FIGHT_MODES)]
+                for stream in state["streams"]:
+                    while not stream["buffer"] and not stream["done"]:
+                        if stream["page"] > 250:
+                            raise UpstreamError("该模式分页超过安全上限，已停止加载")
+                        req_season = season if stream["explicit"] or season != self.current_season else None
+                        mode = stream["mode"]
+                        fetch = client.query_match_list if mode in ("sport", "leisure") else client.fight_query_match_list
+                        payload = ensure_success(fetch(customer_token, mode, page=stream["page"], season=req_season),
+                                                 operation="加载战绩概览")
+                        rows = extract_match_entries(payload, "matchList", "recentMatchList")
+                        if not rows and stream["page"] == 1 and req_season is None:
+                            stream["explicit"] = True
+                            continue
+                        previous = set(stream["seen"])
+                        fresh = [dict(row) for row in rows if str(row.get("matchId") or "") and str(row["matchId"]) not in previous]
+                        if not fresh:
+                            stream["done"] = True
+                            break
+                        self._tag_matches(fresh, season, mode)
+                        if mode in DEFAULT_FIGHT_MODES:
+                            for row in fresh:
+                                row["gameMode"] = mode
+                        stream["seen"].extend(str(row["matchId"]) for row in fresh)
+                        stream["buffer"] = sorted(fresh, key=lambda r: int(r.get("beginTs") or 0), reverse=True)
+                        stream["page"] += 1
+                available = [s for s in state["streams"] if s["buffer"]]
+                if not available:
+                    state["season_index"] += 1
+                    state["streams"] = None
+                    continue
+                stream = max(available, key=lambda s: int(s["buffer"][0].get("beginTs") or 0))
+                row = stream["buffer"].pop(0)
+                mid = str(row["matchId"])
+                if mid not in seen:
+                    seen.add(mid)
+                    output.append(row)
+            state["seen"] = list(seen)
+        has_more = state["season_index"] < len(state["seasons"])
+        return {"current_season": self.current_season, "matches": [normalize_match(r) for r in output],
+                "cursor": state, "has_more": has_more, "count": len(output)}
+
     def three_season_matches(
         self,
         battletag: str | None = None,
@@ -558,7 +620,9 @@ class OWStatsService:
                             rows = extract_match_entries(payload, "matchList", "recentMatchList")
                             self._tag_matches(rows, season, mode)
                             extracted.extend(rows)
-                        except Exception:
+                        except Exception as exc:
+                            if isinstance(exc, RequestBlockedError):
+                                raise
                             warnings.append(f"S{season} {mode} 近期统计请求失败")
                         try:
                             payload = ensure_success(
@@ -569,7 +633,9 @@ class OWStatsService:
                             rows = extract_match_entries(payload, "matchList", "recentMatchList")
                             self._tag_matches(rows, season, mode)
                             extracted.extend(rows)
-                        except Exception:
+                        except Exception as exc:
+                            if isinstance(exc, RequestBlockedError):
+                                raise
                             warnings.append(f"S{season} {mode} 近期第 2 页请求失败")
                     season_rows = merge_unique_matches(season_rows, extracted)
                     if season_rows:
@@ -636,7 +702,7 @@ class OWStatsService:
         battletag: str | None = None,
         customer_token: str | None = None,
         source_match: Dict[str, Any] | None = None,
-        max_workers: int = 4,
+        max_workers: int = 1,
         include_player_raw: bool = True,
     ) -> Dict[str, Any]:
         """抓取普通对局的“全员详细”：记分板 + 每名玩家自己的 heroList/statMap。
@@ -702,36 +768,27 @@ class OWStatsService:
                 "raw": {},
             })
 
-        workers = max(1, min(int(max_workers), 8))
+        # 保留 max_workers 参数兼容调用方，但始终串行，403 立即终止整批。
         results_by_index: Dict[int, Dict[str, Any]] = {}
-        with ThreadPoolExecutor(max_workers=workers) as pool:
-            futures = {
-                pool.submit(
-                    self._fetch_full_player_match_detail,
-                    target,
-                    str(match_id),
+        for index, target in enumerate(targets):
+            try:
+                results_by_index[index] = self._fetch_full_player_match_detail(
+                    target, str(match_id),
                     base_detail=base.get("detail") if str(target.get("customer_token") or "").strip() == focus_token else None,
                     base_root=root if str(target.get("customer_token") or "").strip() == focus_token else None,
                     include_raw=include_player_raw,
-                ): index
-                for index, target in enumerate(targets)
-            }
-            for future in as_completed(futures):
-                index = futures[future]
-                try:
-                    results_by_index[index] = future.result()
-                except Exception as exc:  # 单个玩家失败不能让整局数据丢失
-                    target = targets[index]
-                    results_by_index[index] = {
-                        "name": str(target.get("name") or ""),
-                        "team_type": str(target.get("team_type") or ""),
-                        "bnet_id": str(target.get("bnet_id") or ""),
-                        "customer_token": str(target.get("customer_token") or ""),
-                        "success": False,
-                        "hero_list": [],
-                        "heroes": [],
-                        "error": f"{type(exc).__name__}: {exc}",
-                    }
+                )
+            except RequestBlockedError:
+                raise
+            except Exception as exc:
+                results_by_index[index] = {
+                    "name": str(target.get("name") or ""),
+                    "team_type": str(target.get("team_type") or ""),
+                    "bnet_id": str(target.get("bnet_id") or ""),
+                    "customer_token": str(target.get("customer_token") or ""),
+                    "success": False, "hero_list": [], "heroes": [],
+                    "error": f"{type(exc).__name__}: {exc}",
+                }
         players = [results_by_index[i] for i in range(len(targets)) if i in results_by_index]
         available = sum(1 for row in players if row.get("success") and row.get("hero_list"))
         warnings = [
@@ -769,6 +826,8 @@ class OWStatsService:
                 token = resolved.customer_token
                 resolved_bnet_id = resolved_bnet_id or resolved.bnet_id
             except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 resolve_error = f"无法解析 customerToken: {type(exc).__name__}: {exc}"
 
         detail_payload: Dict[str, Any] = {}
@@ -789,7 +848,9 @@ class OWStatsService:
             try:
                 with self._new_client() as client:
                     card_payload = ensure_success(client.query_card(token), operation="查询玩家卡片")
-            except Exception:
+            except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 card_payload = {}
         card = payload_data(card_payload)
         hero_list = [dict(row) for row in detail_root.get("heroList") or [] if isinstance(row, Mapping)]
@@ -852,7 +913,7 @@ class OWStatsService:
         include_fight: bool = True,
         fight_modes: Sequence[str] = DEFAULT_FIGHT_MODES,
         max_pages_per_mode: int = 250,
-        max_workers: int = 4,
+        max_workers: int = 1,
     ) -> Dict[str, Any]:
         """同玩列表中的某一局 + 该局全员详细。index 为 0 基索引。"""
         same = self.sameplay_records(
@@ -1187,6 +1248,8 @@ class OWStatsService:
                     operation=f"查询 S{logical_season} {fight_mode} 第 {page} 页",
                 )
             except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 warnings.append(f"S{logical_season} {fight_mode} 第 {page} 页失败：{type(exc).__name__}")
                 complete = False
                 stop_reason = "request_error"
@@ -1294,6 +1357,8 @@ class OWStatsService:
             collected = merge_unique_matches(collected, bootstrap)
             seen_ids.update(str(row.get("matchId")) for row in collected if row.get("matchId"))
         except Exception as exc:
+            if isinstance(exc, RequestBlockedError):
+                raise
             warnings.append(f"S{logical_season} {mode} countInfo 失败：{type(exc).__name__}")
 
         previous_signature: Optional[Tuple[str, ...]] = None
@@ -1304,6 +1369,8 @@ class OWStatsService:
                     operation=f"查询 S{logical_season} {mode} 第 {page} 页",
                 )
             except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 warnings.append(f"S{logical_season} {mode} 第 {page} 页失败：{type(exc).__name__}")
                 complete = False
                 stop_reason = "request_error"
@@ -1376,6 +1443,8 @@ class OWStatsService:
                     operation=f"查询 S{logical_season} {mode} 资料",
                 )
             except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 warnings.append(f"S{logical_season} {mode} 资料失败：{type(exc).__name__}")
                 continue
             best, best_request = payload, request_season
@@ -1399,6 +1468,8 @@ class OWStatsService:
                     operation=f"查询 S{logical_season} 角斗赛季资料",
                 )
             except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 warnings.append(f"S{logical_season} 角斗资料失败：{type(exc).__name__}")
                 continue
             best, best_request = payload, request_season
@@ -1420,7 +1491,9 @@ class OWStatsService:
     ) -> Dict[str, Any]:
         try:
             return client.query_count_info(token, mode, season=request_season)
-        except Exception:
+        except Exception as exc:
+            if isinstance(exc, RequestBlockedError):
+                raise
             return {}
 
     def season_status(self) -> Dict[str, Any]:
@@ -1450,7 +1523,9 @@ class OWStatsService:
                     client.query_count_info(token, "sport", season=None),
                     operation="自动识别当前赛季",
                 )
-            except Exception:
+            except Exception as exc:
+                if isinstance(exc, RequestBlockedError):
+                    raise
                 return self.current_season
 
             detected = self._extract_current_season_from_payload(payload)
@@ -1477,7 +1552,9 @@ class OWStatsService:
                         client.query_count_info(token, "sport", season=candidate),
                         operation=f"探测 S{candidate}",
                     )
-                except Exception:
+                except Exception as exc:
+                    if isinstance(exc, RequestBlockedError):
+                        raise
                     continue
                 if self._season_fingerprint(explicit) == fingerprint:
                     self.current_season = candidate
@@ -1555,7 +1632,9 @@ class OWStatsService:
             if not match_ids and not role_sig and not hero_sig:
                 return None
             return (match_ids, role_sig, hero_sig)
-        except Exception:
+        except Exception as exc:
+            if isinstance(exc, RequestBlockedError):
+                raise
             return None
 
     def _season_request_values(self, logical_season: int) -> Sequence[Optional[int]]:

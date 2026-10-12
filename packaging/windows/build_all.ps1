@@ -100,7 +100,24 @@ if (-not $SkipTests) {
         $env:PYTHONPATH = $OldPythonPath
     }
 
-    Invoke-Checked -FilePath $VenvPython -Arguments @('-m', 'pytest', '-q', 'tests')
+    # Qt GUI test modules own application/window state. Run every module in
+    # a fresh process so teardown state cannot leak into the next module.
+    # No tests are skipped; any assertion failure or native crash still stops the build.
+    $OldQtPlatform = $env:QT_QPA_PLATFORM
+    try {
+        $env:QT_QPA_PLATFORM = 'offscreen'
+        $UiTestFiles = @(Get-ChildItem (Join-Path $Root 'tests') -Recurse -File -Filter 'test_*.py' | Sort-Object FullName)
+        if ($UiTestFiles.Count -eq 0) {
+            throw 'No UI test modules were found.'
+        }
+        foreach ($TestFile in $UiTestFiles) {
+            Write-Host "==> Testing $($TestFile.Name) in an isolated process" -ForegroundColor DarkGray
+            Invoke-Checked -FilePath $VenvPython -Arguments @('-X', 'faulthandler', '-m', 'pytest', '-q', $TestFile.FullName)
+        }
+    }
+    finally {
+        $env:QT_QPA_PLATFORM = $OldQtPlatform
+    }
 }
 
 foreach ($dir in @('.build', 'dist', 'release')) {

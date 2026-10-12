@@ -4,8 +4,12 @@ from __future__ import annotations
 from typing import Any, Dict, Optional
 
 import httpx
+import time
+from threading import Lock
+from email.utils import parsedate_to_datetime
+from datetime import datetime, timezone
 
-from .errors import UpstreamError
+from .errors import UpstreamError, RequestBlockedError
 from .models import DashenCredential
 
 DASHEN_API_ROOT = "https://datamsapi.ds.163.com/v1/a19ld5tool"
@@ -21,6 +25,36 @@ DEFAULT_USER_AGENT = (
     "(KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 "
     "app/df_client dfVersion/100111"
 )
+
+
+class _AccountGate:
+    def __init__(self):
+        self.lock = Lock()
+        self.finished = 0.0
+        self.forbidden = False
+        self.retry_at = 0.0
+
+
+_GATES = {}
+_GATES_LOCK = Lock()
+REQUEST_INTERVAL_SECONDS = 0.1
+
+
+def _account_gate(credential):
+    # 不随 client 实例或重新扫码更换 token 而重置。
+    key = (str(credential.server), str(credential.role_id))
+    with _GATES_LOCK:
+        return _GATES.setdefault(key, _AccountGate())
+
+
+def _retry_seconds(value):
+    try:
+        return max(0.0, float(value))
+    except (TypeError, ValueError):
+        try:
+            return max(0.0, (parsedate_to_datetime(value) - datetime.now(timezone.utc)).total_seconds())
+        except (TypeError, ValueError, OverflowError):
+            return 60.0
 
 
 class DashenClient:
@@ -74,7 +108,34 @@ class DashenClient:
             "User-Agent": self.user_agent,
         }
 
-    def _request_json(
+    def _request_json(self, method, url, **kwargs):
+        gate = _account_gate(self.credential)
+        with gate.lock:
+            if gate.forbidden:
+                raise RequestBlockedError("该账号已收到 403，本次运行已停止战绩查询，请先确认账号权限。", status_code=403)
+            if time.monotonic() < gate.retry_at:
+                raise RequestBlockedError("请求过于频繁，冷却期间已停止查询，请稍后手动重试。", status_code=429)
+            delay = gate.finished + REQUEST_INTERVAL_SECONDS - time.monotonic()
+            if delay > 0:
+                time.sleep(delay)
+            try:
+                payload = self._request_json_unthrottled(method, url, **kwargs)
+                if str(payload.get("code")) in ("403", "429"):
+                    raise UpstreamError("网易大神拒绝查询", code=payload["code"])
+                return payload
+            except UpstreamError as exc:
+                code = str(exc.status_code or exc.code)
+                if code == "403":
+                    gate.forbidden = True
+                    raise RequestBlockedError("网易大神返回 403，已停止该账号后续战绩请求。", status_code=403) from exc
+                if code == "429":
+                    gate.retry_at = time.monotonic() + getattr(exc, "retry_after_seconds", 60.0)
+                    raise RequestBlockedError("网易大神返回 429，已暂停查询，请冷却后手动重试。", status_code=429) from exc
+                raise
+            finally:
+                gate.finished = time.monotonic()
+
+    def _request_json_unthrottled(
         self,
         method: str,
         url: str,
@@ -98,11 +159,13 @@ class DashenClient:
                 payload = exc.response.json()
             except Exception:
                 pass
-            raise UpstreamError(
+            error = UpstreamError(
                 f"网易大神接口 HTTP {exc.response.status_code}",
                 status_code=exc.response.status_code,
                 payload=payload,
-            ) from exc
+            )
+            error.retry_after_seconds = _retry_seconds(exc.response.headers.get("Retry-After"))
+            raise error from exc
         except httpx.HTTPError as exc:
             raise UpstreamError(f"连接网易大神失败：{type(exc).__name__}: {exc}") from exc
         try:

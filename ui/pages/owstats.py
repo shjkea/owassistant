@@ -31,6 +31,7 @@ from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
+    QPushButton,
     QSizePolicy,
     QStackedWidget,
     QVBoxLayout,
@@ -112,6 +113,8 @@ class OWStatsPage(QWidget):
         self._preset_role_filter = PRESET_ROLE_ALL
         self._season_filter: Any = SEASON_FILTER_ALL
         self._recent_form: Dict[str, Any] = {}
+        self._history_cursor = None
+        self._history_has_more = False
         self._query_busy = False
         self._detail_busy = False
         self._drive = DriveSelection()
@@ -260,6 +263,12 @@ class OWStatsPage(QWidget):
         self.match_list.driveClearRequested.connect(self._clear_drive_range)
         self.match_list.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         list_lay.addWidget(self.match_list, 1)
+        self.load_more_btn = QPushButton("加载更多（20 场）", list_host)
+        self.load_more_btn.clicked.connect(self.load_more_matches)
+        self.load_more_btn.setVisible(False)
+        self.load_more_btn.setToolTip("继续加载较早记录；赛季和模式筛选作用于已加载的记录。")
+        list_lay.addWidget(self.load_more_btn)
+
         outer.addWidget(list_host, 1)
         self._list_host = list_host
         # 卡片右侧信息容器要和「导入竞逐计算器」按钮左边缘对齐；
@@ -396,8 +405,10 @@ class OWStatsPage(QWidget):
         self.recent_header.set_text(
             f"近期状态 · {current} 竞技 + 快速" if current else "近期状态 · 竞技 + 快速"
         )
+        if self._history_has_more:
+            self.recent_header.set_text(f"近期状态 · {current} 竞技 + 快速（已加载记录）")
         total = len(self._filtered_matches())
-        self.match_header.set_text(f"战绩记录（{total}）" if total else "战绩记录")
+        self.match_header.set_text(f"已加载战绩（{total}）" if total else "已加载战绩（0）")
 
     def _on_season_changed(self, season: int) -> None:
         self._selected_season = int(season)
@@ -434,13 +445,14 @@ class OWStatsPage(QWidget):
     # ------------------------------------------------------------------ 查询
     def _set_query_busy(self, busy: bool) -> None:
         self._query_busy = busy
+        self.load_more_btn.setEnabled(not busy)
         self.search_btn.setEnabled(not busy)
         self.refresh_btn.setEnabled(not busy)
         self.query_edit.setEnabled(not busy)
         self.search_btn.setText("查询中…" if busy else "查询战绩")
 
     def search(self) -> None:
-        if self._query_busy:
+        if self._query_busy or self._detail_busy:
             return
         query = self.query_edit.text().replace("＃", "#").strip()
         if not query:
@@ -450,7 +462,7 @@ class OWStatsPage(QWidget):
             self.banner.show_message("请先完成网易大神扫码授权。", "warn")
             self.open_auth_dialog()
             return
-        self.banner.show_message("正在读取玩家资料、三赛季段位与完整逐场战绩…", "info")
+        self.banner.show_message("正在读取玩家资料、三赛季段位与最近 20 场概览…", "info")
         self._set_query_busy(True)
         service = self._service
 
@@ -459,7 +471,7 @@ class OWStatsPage(QWidget):
             token = player.customer_token
             card = service.player_card(customer_token=token)
             seasons = service.player_seasons(customer_token=token, season_count=3)
-            history = service.match_history(customer_token=token, season_count=3)
+            history = service.match_overview_page(customer_token=token, limit=20)
             return {
                 "player": player.to_dict(),
                 "card": card,
@@ -478,6 +490,9 @@ class OWStatsPage(QWidget):
         seasons = dict(data.get("seasons") or {})
         history = dict(data.get("history") or {})
         status = dict(data.get("season_status") or {})
+        self._history_cursor = history.get("cursor")
+        self._history_has_more = bool(history.get("has_more"))
+        self.load_more_btn.setVisible(self._history_has_more)
 
         self._customer_token = str(player.get("customer_token") or "")
         self._player = D.player_header_view(card)
@@ -533,6 +548,36 @@ class OWStatsPage(QWidget):
 
         # 分页完整性仅保留在返回数据中，不生成任何常驻提示控件。
         self.banner.clear()
+
+    def load_more_matches(self) -> None:
+        if self._query_busy or self._detail_busy or not self._history_has_more or not self._customer_token:
+            return
+        self._set_query_busy(True)
+        token, cursor = self._customer_token, self._history_cursor
+        self.banner.show_message("正在加载后续 20 场概览…", "info")
+
+        def task():
+            return self._service.match_overview_page(customer_token=token, cursor=cursor, limit=20)
+
+        def ready(history):
+            self._history_cursor = history.get("cursor")
+            self._history_has_more = bool(history.get("has_more"))
+            self.load_more_btn.setVisible(self._history_has_more)
+            views = [D.match_view(m) for m in history.get("matches") or []]
+            D.apply_rank_from_roles(views, self._season_roles)
+            for view in views:
+                mid = str(view.get("match_id") or "")
+                if mid and mid not in self._match_index:
+                    self._matches.append(view)
+                    self._match_index[mid] = view
+            self._matches.sort(key=lambda v: int(v.get("begin_ts") or 0), reverse=True)
+            self._render_recent_form()
+            self._render_matches(keep_scroll=True)
+            self._update_headers()
+            self.banner.clear()
+
+        submit(self, task, on_result=ready, on_error=self._query_error,
+               on_finished=lambda: self._set_query_busy(False))
 
     def _query_error(self, message: str) -> None:
         self.banner.show_message(message, "error")
@@ -679,7 +724,7 @@ class OWStatsPage(QWidget):
 
     # ------------------------------------------------------------------ 详情
     def open_detail(self, match_id: str) -> None:
-        if self._detail_busy:
+        if self._detail_busy or self._query_busy:
             return
         view = self._match_index.get(str(match_id))
         if not view:

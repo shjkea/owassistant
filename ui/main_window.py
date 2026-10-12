@@ -37,7 +37,7 @@ from .win_titlebar import apply_dark_titlebar
 APP_NAME = "守望先锋 国服助手"
 APP_SUBTITLE = "OW ASSISTANT"
 # 应用版本号唯一来源；侧栏品牌区等 UI 统一从这里读取。
-APP_VERSION = "0.9.0"
+APP_VERSION = "0.9.1"
 
 # 导航顺序固定：国服战绩 → 账号切换 → 竞逐预测 → 竞逐历史 → 规则设置。
 # 「竞逐历史」记录的是竞逐预测 / 竞逐计算相关历史，不是 OW 对局历史。
